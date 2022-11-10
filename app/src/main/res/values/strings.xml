@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Quizzo - JT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="tvWelcomeMessage">Quizzo App - JT</string>
+    <string name="tvSelectGenre">Please Select a Genre:</string>
+    <string name="btnAddQuestion">Add Question</string>
+    <string name="btnPracticeQuiz">Practice Quiz</string>
+    <string-array name="Genres">
+        <item>Geography</item>
+        <item>Video Games</item>
+        <item>Animals</item>
+        <item>Sports</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="SpinnerChoices">
+        <item>Choice 1</item>
+        <item>Choice 2</item>
+        <item>Choice 3</item>
+        <item>Choice 4</item>
+    </string-array>
+</resources>

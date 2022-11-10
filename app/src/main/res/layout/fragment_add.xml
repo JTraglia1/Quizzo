@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/tvAddGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddQuestion"
+        app:layout_constraintEnd_toStartOf="@+id/Genre"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAddQuestion"
+        android:layout_width="89dp"
+        android:layout_height="21dp"
+        android:text="Question:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddFirstChoice"
+        app:layout_constraintEnd_toStartOf="@+id/Text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddGenre" />
+
+    <TextView
+        android:id="@+id/tvAddFirstChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice 1:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddSecondChoice"
+        app:layout_constraintEnd_toStartOf="@+id/choice1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddQuestion" />
+
+    <TextView
+        android:id="@+id/tvAddSecondChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice 2:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddThirdChoice"
+        app:layout_constraintEnd_toStartOf="@+id/choice2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddFirstChoice" />
+
+    <TextView
+        android:id="@+id/tvAddThirdChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice 3:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddFourthChoice"
+        app:layout_constraintEnd_toStartOf="@+id/choice3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddSecondChoice" />
+
+    <TextView
+        android:id="@+id/tvAddFourthChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice 4:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddAnswer"
+        app:layout_constraintEnd_toStartOf="@+id/choice4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddThirdChoice" />
+
+    <TextView
+        android:id="@+id/tvAddAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFollowUpFact"
+        app:layout_constraintEnd_toStartOf="@+id/SpinnerChoices"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddFourthChoice" />
+
+    <TextView
+        android:id="@+id/tvFollowUpFact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Follow-up Fact:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toStartOf="@+id/FollowUpFact"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddAnswer" />
+
+    <EditText
+        android:id="@+id/Genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddGenre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/choice1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/Genre" />
+
+    <EditText
+        android:id="@+id/choice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/choice2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddFirstChoice"
+        app:layout_constraintTop_toBottomOf="@+id/Text" />
+
+    <EditText
+        android:id="@+id/choice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/choice3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddSecondChoice"
+        app:layout_constraintTop_toBottomOf="@+id/choice1" />
+
+    <EditText
+        android:id="@+id/choice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/choice4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddThirdChoice"
+        app:layout_constraintTop_toBottomOf="@+id/choice2" />
+
+    <EditText
+        android:id="@+id/choice4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/SpinnerChoices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddFourthChoice"
+        app:layout_constraintTop_toBottomOf="@+id/choice3" />
+
+    <Spinner
+        android:id="@+id/SpinnerChoices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:entries="@array/SpinnerChoices"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/FollowUpFact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvAddAnswer"
+        app:layout_constraintTop_toBottomOf="@+id/choice4" />
+
+    <EditText
+        android:id="@+id/FollowUpFact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvFollowUpFact"
+        app:layout_constraintTop_toBottomOf="@+id/SpinnerChoices" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Question"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FollowUpFact" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
