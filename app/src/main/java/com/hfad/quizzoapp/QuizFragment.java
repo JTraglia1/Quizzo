@@ -1,12 +1,9 @@
 package com.hfad.quizzoapp;
 
 import static com.hfad.quizzoapp.Database.getQuestions;
-
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +12,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link QuizFragment#} factory method to
- * create an instance of this fragment.
+ *  QuizFragment.java - Quizzo
+ *  This fragment allows a user take a quiz on their selected genre.
+ *
+ *  @author Joseph Traglia
+ *
  */
 public class QuizFragment extends Fragment
 {

@@ -1,16 +1,20 @@
 package com.hfad.quizzoapp;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
+/**
+ *  AddedFragment.java - Quizzo
+ *  This fragment displays that the user's question has been added to the database.
+ *
+ *  @author Joseph Traglia
+ *
+ */
 public class AddedFragment extends Fragment
 {
     @Override

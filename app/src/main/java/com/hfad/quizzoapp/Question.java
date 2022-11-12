@@ -2,6 +2,13 @@ package com.hfad.quizzoapp;
 
 import java.util.ArrayList;
 
+/**
+ *  Question.java - Greetings
+ *  This class contains the parameters for a user to add a question.
+ *
+ *  @author Joseph Traglia
+ *
+ */
 public class Question {
 
     private String genre;

@@ -9,13 +9,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddFragment#} factory method to
- * create an instance of this fragment.
+ *  AddFragment.java - Quizzo
+ *  This fragment allows a user to add a genre, a question, four choices, an answer,
+ *  and a follow up fact to the list of questions.
+ *
+ *  @author Joseph Traglia
+ *
  */
 public class AddFragment extends Fragment
 {

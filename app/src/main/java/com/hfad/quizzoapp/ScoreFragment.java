@@ -1,10 +1,8 @@
 package com.hfad.quizzoapp;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +10,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ScoreFragment#} factory method to
- * create an instance of this fragment.
+ *  ScoreFragment.java - Quizzo
+ *  This fragment displays the user's quiz score.
+ *
+ *  @author Joseph Traglia
+ *
  */
 public class ScoreFragment extends Fragment
 {

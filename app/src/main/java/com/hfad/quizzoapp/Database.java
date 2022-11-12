@@ -3,6 +3,13 @@ package com.hfad.quizzoapp;
 import android.view.View;
 import java.util.ArrayList;
 
+/**
+ *  Database.java - Quizzo
+ *  This class houses the database of questions.
+ *
+ *  @author Joseph Traglia
+ *
+ */
 public class Database extends Question
 {
     private static ArrayList<Question> questions;
