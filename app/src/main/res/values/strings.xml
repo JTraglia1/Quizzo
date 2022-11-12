@@ -3,9 +3,33 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="tvWelcomeMessage">Quizzo App - JT</string>
     <string name="tvSelectGenre">Please Select a Genre:</string>
-    <string name="btnAddQuestion">Add Question</string>
+    <string name="btnAddUserQuestion">Add Question</string>
     <string name="btnPracticeQuiz">Practice Quiz</string>
-    <string-array name="Genres">
+    <string name="tvAddGenre">Genre:</string>
+    <string name="tvAddQuestion">Question:</string>
+    <string name="tvAddFirstChoice">Choice 1:</string>
+    <string name="tvAddSecondChoice">Choice 2:</string>
+    <string name="tvAddThirdChoice">Choice 3:</string>
+    <string name="tvAddFourthChoice">Choice 4:</string>
+    <string name="tvAddAnswer">Answer:</string>
+    <string name="tvFollowUpFact">Follow-up Fact:</string>
+    <string name="btnReturnToHomeScreen">Return</string>
+    <string name="tvAlertQuestionAdded">Question Added!</string>
+    <string name="tvGenreSelected">Genre</string>
+    <string name="tvCurrentQuestionNumber">Question X out of X</string>
+    <string name="tvQuizQuestion">Quiz Question</string>
+    <string name="rbFirstChoice">First Choice</string>
+    <string name="rbSecondChoice">Second Choice</string>
+    <string name="rbThirdChoice">Third Choice</string>
+    <string name="rbFourthChoice">Fourth Choice</string>
+    <string name="rbFifthChoice">Fifth Choice</string>
+    <string name="btnNextQuestion">Next Question</string>
+    <string name="tvAnswersCorrect">XXX of XXX Correct!</string>
+    <string name="tvPercentageCorrect">Percentage</string>
+    <string name="tvMessage">Message</string>
+    <string name="btnReturn">Return</string>
+    <string name="btnAddQuestion">Add Question</string>
+    <string-array name="spnGenres">
         <item>Geography</item>
         <item>Video Games</item>
         <item>Animals</item>

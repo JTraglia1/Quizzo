@@ -16,38 +16,54 @@ import android.widget.TextView;
  * Use the {@link ScoreFragment#} factory method to
  * create an instance of this fragment.
  */
-public class ScoreFragment extends Fragment {
+public class ScoreFragment extends Fragment
+{
+    int iterator = 0;
 
-    int counter = 0;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_score, container, false);
 
-        TextView tvCorrect = view.findViewById(R.id.NumCorrect);
-        TextView tvPercent = view.findViewById(R.id.PercentCorrect);
+        TextView tvAnswersCorrect = view.findViewById(R.id.tvWelcomeMessage);
+        TextView tvPercentageCorrect = view.findViewById(R.id.tvPercentageCorrect);
+        TextView tvMessage = view.findViewById(R.id.tvMessage);
         Button btnReturn = view.findViewById(R.id.btnReturn);
+
         String[] answer = ScoreFragmentArgs.fromBundle(requireArguments()).getAnswers();
 
-        for(int i = 0; i < answer.length; i++)
+        for (int i = 0; i < answer.length; i++)
         {
-            if(answer[i].equals("Correct"))
+            if (answer[i].equals("Correct"))
             {
-                counter++;
+                iterator++;
             }
         }
 
-        tvCorrect.setText("Number Correct: " + counter);
-        tvPercent.setText("Percentage: " + (counter * 1.0 / answer.length) * 100 + "%");
+        tvAnswersCorrect.setText("Number Correct: " + iterator);
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
+        double percentage = iterator * 1.0 / answer.length * 100;
+
+        tvPercentageCorrect.setText("Percentage: " + percentage + "%");
+
+        if (percentage > 70)
+        {
+            tvMessage.setText("Great Job!");
+        }
+        else if (percentage < 70)
+        {
+            tvMessage.setText("Better Luck Next Time!");
+        }
+
+        btnReturn.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_scoreFragment_to_welcomeFragment);
+            public void onClick(View view)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_scoreFragment_to_welcomeFragment);
             }
         });
-
 
         return view;
     }

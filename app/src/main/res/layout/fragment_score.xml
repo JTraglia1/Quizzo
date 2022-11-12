@@ -9,38 +9,50 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:id="@+id/NumCorrect"
+        android:id="@+id/tvWelcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="XXX of XXX Correct!"
+        android:text="@string/tvAnswersCorrect"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/PercentCorrect"
+        app:layout_constraintBottom_toTopOf="@+id/tvPercentageCorrect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/PercentCorrect"
+        android:id="@+id/tvPercentageCorrect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Percentage"
+        android:text="@string/tvPercentageCorrect"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeMessage" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvMessage"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnReturn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumCorrect" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPercentageCorrect" />
 
     <Button
         android:id="@+id/btnReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Return"
+        android:text="@string/btnReturn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PercentCorrect" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

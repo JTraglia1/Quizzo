@@ -8,7 +8,7 @@ public class Question {
     private String question;
     private ArrayList<String> choices = new ArrayList<String>();
     private String answer;
-    private String followUp;
+    private String followUpFact;
 
     public Question()
     {
@@ -16,25 +16,21 @@ public class Question {
         question = "";
         choices.add("");
         answer = "";
-        followUp = "";
+        followUpFact = "";
     }
 
-    public Question(String g, String q, ArrayList<String> c, String a, String f)
+    public Question(String gen, String ques, ArrayList<String> userChoices, String answ, String fact)
     {
-        genre = g;
-        //System.out.println(genre);
-        question = q;
-        //System.out.println(question);
+        genre = gen;
+        question = ques;
 
-        for(int i = 0; i < c.size(); i++)
+        for (int i = 0; i < userChoices.size(); i++)
         {
-            //System.out.println(c.get(i));
-            choices.add(c.get(i));
+            choices.add(userChoices.get(i));
         }
-        answer = a;
-        //System.out.println(answer);
-        followUp = f;
-        //System.out.println(followUp);
+
+        answer = answ;
+        followUpFact = fact;
     }
 
 
@@ -71,11 +67,11 @@ public class Question {
     }
 
     public String getFollowUp() {
-        return followUp;
+        return followUpFact;
     }
 
     public void setFollowUp(String followUp) {
-        this.followUp = followUp;
+        this.followUpFact = followUp;
     }
 }
 

@@ -12,10 +12,10 @@
         android:id="@+id/tvAddGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Genre:"
+        android:text="@string/tvAddGenre"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddQuestion"
-        app:layout_constraintEnd_toStartOf="@+id/Genre"
+        app:layout_constraintEnd_toStartOf="@+id/etAddGenre"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,10 +24,10 @@
         android:id="@+id/tvAddQuestion"
         android:layout_width="89dp"
         android:layout_height="21dp"
-        android:text="Question:"
+        android:text="@string/tvAddQuestion"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddFirstChoice"
-        app:layout_constraintEnd_toStartOf="@+id/Text"
+        app:layout_constraintEnd_toStartOf="@+id/etAddQuestion"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddGenre" />
@@ -36,10 +36,10 @@
         android:id="@+id/tvAddFirstChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choice 1:"
+        android:text="@string/tvAddFirstChoice"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddSecondChoice"
-        app:layout_constraintEnd_toStartOf="@+id/choice1"
+        app:layout_constraintEnd_toStartOf="@+id/etAddFirstChoice"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddQuestion" />
@@ -48,10 +48,10 @@
         android:id="@+id/tvAddSecondChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choice 2:"
+        android:text="@string/tvAddSecondChoice"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddThirdChoice"
-        app:layout_constraintEnd_toStartOf="@+id/choice2"
+        app:layout_constraintEnd_toStartOf="@+id/etAddSecondChoice"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddFirstChoice" />
@@ -60,10 +60,10 @@
         android:id="@+id/tvAddThirdChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choice 3:"
+        android:text="@string/tvAddThirdChoice"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddFourthChoice"
-        app:layout_constraintEnd_toStartOf="@+id/choice3"
+        app:layout_constraintEnd_toStartOf="@+id/etAddThirdChoice"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddSecondChoice" />
@@ -72,10 +72,10 @@
         android:id="@+id/tvAddFourthChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choice 4:"
+        android:text="@string/tvAddFourthChoice"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvAddAnswer"
-        app:layout_constraintEnd_toStartOf="@+id/choice4"
+        app:layout_constraintEnd_toStartOf="@+id/etAddFourthChoice"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddThirdChoice" />
@@ -84,10 +84,10 @@
         android:id="@+id/tvAddAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Answer:"
+        android:text="@string/tvAddAnswer"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tvFollowUpFact"
-        app:layout_constraintEnd_toStartOf="@+id/SpinnerChoices"
+        app:layout_constraintEnd_toStartOf="@+id/spnChoices"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddFourthChoice" />
@@ -96,134 +96,134 @@
         android:id="@+id/tvFollowUpFact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Follow-up Fact:"
+        android:text="@string/tvFollowUpFact"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
-        app:layout_constraintEnd_toStartOf="@+id/FollowUpFact"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddUserQuestion"
+        app:layout_constraintEnd_toStartOf="@+id/etFollowUpFact"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAddAnswer" />
 
     <EditText
-        android:id="@+id/Genre"
+        android:id="@+id/etAddGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/Text"
+        app:layout_constraintBottom_toTopOf="@+id/etAddQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddGenre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Text"
+        android:id="@+id/etAddQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice1"
+        app:layout_constraintBottom_toTopOf="@+id/etAddFirstChoice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddQuestion"
-        app:layout_constraintTop_toBottomOf="@+id/Genre" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddGenre" />
 
     <EditText
-        android:id="@+id/choice1"
+        android:id="@+id/etAddFirstChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice2"
+        app:layout_constraintBottom_toTopOf="@+id/etAddSecondChoice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddFirstChoice"
-        app:layout_constraintTop_toBottomOf="@+id/Text" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddQuestion" />
 
     <EditText
-        android:id="@+id/choice2"
+        android:id="@+id/etAddSecondChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice3"
+        app:layout_constraintBottom_toTopOf="@+id/etAddThirdChoice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddSecondChoice"
-        app:layout_constraintTop_toBottomOf="@+id/choice1" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddFirstChoice" />
 
     <EditText
-        android:id="@+id/choice3"
+        android:id="@+id/etAddThirdChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice4"
+        app:layout_constraintBottom_toTopOf="@+id/etAddFourthChoice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddThirdChoice"
-        app:layout_constraintTop_toBottomOf="@+id/choice2" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddSecondChoice" />
 
     <EditText
-        android:id="@+id/choice4"
+        android:id="@+id/etAddFourthChoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/SpinnerChoices"
+        app:layout_constraintBottom_toTopOf="@+id/spnChoices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddFourthChoice"
-        app:layout_constraintTop_toBottomOf="@+id/choice3" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddThirdChoice" />
 
     <Spinner
-        android:id="@+id/SpinnerChoices"
+        android:id="@+id/spnChoices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:entries="@array/SpinnerChoices"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/FollowUpFact"
+        app:layout_constraintBottom_toTopOf="@+id/etFollowUpFact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAddAnswer"
-        app:layout_constraintTop_toBottomOf="@+id/choice4" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddFourthChoice" />
 
     <EditText
-        android:id="@+id/FollowUpFact"
+        android:id="@+id/etFollowUpFact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddUserQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvFollowUpFact"
-        app:layout_constraintTop_toBottomOf="@+id/SpinnerChoices" />
+        app:layout_constraintTop_toBottomOf="@+id/spnChoices" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnAddUserQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Question"
+        android:text="@string/btnAddUserQuestion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FollowUpFact" />
+        app:layout_constraintTop_toBottomOf="@+id/etFollowUpFact" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

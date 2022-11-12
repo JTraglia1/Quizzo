@@ -10,26 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddedFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class AddedFragment extends Fragment {
 
-
+public class AddedFragment extends Fragment
+{
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_added, container, false);
 
-        Button btnReturn = view.findViewById(R.id.MainMenu);
+        Button btnReturnToHomeScreen = view.findViewById(R.id.btnAddQuestion);
 
-        btnReturn.setOnClickListener(new View.OnClickListener() {
+        btnReturnToHomeScreen.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_addedFragment_to_welcomeFragment);
+            public void onClick(View view)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_addedFragment_to_welcomeFragment);
             }
         });
 

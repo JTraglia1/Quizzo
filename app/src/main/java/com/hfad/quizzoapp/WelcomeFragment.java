@@ -19,33 +19,34 @@ import android.widget.Spinner;
 public class WelcomeFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_welcome, container, false);
 
-        Button btnAdd = view.findViewById(R.id.MainMenu);
-        Button btnQuiz = view.findViewById(R.id.buttonPractice);
-        Spinner spnGenre = view.findViewById(R.id.Genres);
+        Button btnAddQuestion = view.findViewById(R.id.btnAddQuestion);
+        Spinner spnGenres = view.findViewById(R.id.spnGenres);
+        Button btnPracticeQuiz = view.findViewById(R.id.btnPracticeQuiz);
 
-        btnQuiz.setOnClickListener(new View.OnClickListener() {
+        btnAddQuestion.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-
-                String genre = spnGenre.getSelectedItem().toString();
-                WelcomeFragmentDirections.ActionWelcomeFragmentToQuizFragment action =
-                        WelcomeFragmentDirections.actionWelcomeFragmentToQuizFragment(genre);
-
-                System.out.println(spnGenre.getSelectedItem().toString() + "Test");
-                Navigation.findNavController(v).navigate(action);
+            public void onClick(View view)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_addFragment);
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        btnPracticeQuiz.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view)
+            {
+                String genre = spnGenres.getSelectedItem().toString();
+                WelcomeFragmentDirections.ActionWelcomeFragmentToQuizFragment action =
+                        WelcomeFragmentDirections.actionWelcomeFragmentToQuizFragment(genre);
 
-                Navigation.findNavController(v).navigate(R.id.action_welcomeFragment_to_addFragment);
+                Navigation.findNavController(view).navigate(action);
             }
         });
 

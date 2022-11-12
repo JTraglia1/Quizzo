@@ -1,24 +1,15 @@
 package com.hfad.quizzoapp;
 
-import android.database.DataSetObserver;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -26,103 +17,88 @@ import java.util.ArrayList;
  * Use the {@link AddFragment#} factory method to
  * create an instance of this fragment.
  */
-public class AddFragment extends Fragment {
+public class AddFragment extends Fragment
+{
+    ArrayList<Question> questions;
+    ArrayList<String> choices = new ArrayList<String>();
+    ArrayList<String> quiz = new ArrayList<String>();
 
-    private ArrayList<Question> quest;
+    String userAnswer = "";
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add, container, false);
-        Spinner spinnerChoices = view.findViewById(R.id.SpinnerChoices);
-        Button btnAdd = view.findViewById(R.id.btnAdd);
 
-        TextView Genre = view.findViewById(R.id.Genre);
-        TextView followUp = view.findViewById(R.id.FollowUpFact);
-        TextView Question = view.findViewById(R.id.Text);
-        TextView answer1 = view.findViewById(R.id.choice1);
-        TextView answer2 = view.findViewById(R.id.choice2);
-        TextView answer3 = view.findViewById(R.id.choice3);
-        TextView answer4 = view.findViewById(R.id.choice4);
+        TextView etAddGenre = view.findViewById(R.id.etAddGenre);
+        TextView etAddQuestion = view.findViewById(R.id.etAddQuestion);
+        TextView etAddFirstChoice = view.findViewById(R.id.etAddFirstChoice);
+        TextView etAddSecondChoice = view.findViewById(R.id.etAddSecondChoice);
+        TextView etAddThirdChoice = view.findViewById(R.id.etAddThirdChoice);
+        TextView etAddFourthChoice = view.findViewById(R.id.etAddFourthChoice);
+        Spinner spnChoices = view.findViewById(R.id.spnChoices);
+        TextView etFollowUpFact = view.findViewById(R.id.etFollowUpFact);
+        Button btnAddUserQuestion = view.findViewById(R.id.btnAddUserQuestion);
 
-
-        ArrayList<String> choices = new ArrayList<String>();
-
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        btnAddUserQuestion.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view)
+            {
 
-                if(!answer1.getText().toString().equals(""))
+                if (!etAddFirstChoice.getText().toString().equals(""))
                 {
-                    choices.add(answer1.getText().toString());
+                    choices.add(etAddFirstChoice.getText().toString());
                 }
-                if(!answer2.getText().toString().equals(""))
+                if (!etAddSecondChoice.getText().toString().equals(""))
                 {
-                    choices.add(answer2.getText().toString());
+                    choices.add(etAddSecondChoice.getText().toString());
                 }
-                if(!answer3.getText().toString().equals(""))
+                if (!etAddThirdChoice.getText().toString().equals(""))
                 {
-                    choices.add(answer3.getText().toString());
+                    choices.add(etAddThirdChoice.getText().toString());
                 }
-                if(!answer4.getText().toString().equals(""))
+                if (!etAddFourthChoice.getText().toString().equals(""))
                 {
-                    choices.add(answer4.getText().toString());
+                    choices.add(etAddFourthChoice.getText().toString());
                 }
 
-                if(choices.contains("")) {
-                    //Need an if statement to stop if not enough info provided.
-                }
                 else
                 {
-                    String chosenAnswer = "";
-                    if(spinnerChoices.getSelectedItem().toString().equals("Choice 1"))
+                    if (spnChoices.getSelectedItem().toString().equals("Choice 1"))
                     {
-                        chosenAnswer = answer1.getText().toString();
+                        userAnswer = etAddFirstChoice.getText().toString();
                     }
-                    else if(spinnerChoices.getSelectedItem().toString().equals("Choice 2"))
+                    else if (spnChoices.getSelectedItem().toString().equals("Choice 2"))
                     {
-                        chosenAnswer = answer2.getText().toString();
+                        userAnswer = etAddSecondChoice.getText().toString();
                     }
-                    else if(spinnerChoices.getSelectedItem().toString().equals("Choice 3"))
+                    else if (spnChoices.getSelectedItem().toString().equals("Choice 3"))
                     {
-                        chosenAnswer = answer3.getText().toString();
+                        userAnswer = etAddThirdChoice.getText().toString();
                     }
-                    else if(spinnerChoices.getSelectedItem().toString().equals("Choice 4"))
+                    else if (spnChoices.getSelectedItem().toString().equals("Choice 4"))
                     {
-                        chosenAnswer = answer4.getText().toString();
+                        userAnswer = etAddFourthChoice.getText().toString();
                     }
 
-                    quest = Database.setData(Genre.getText().toString(), followUp.getText().toString(), Question.getText().toString(), choices, chosenAnswer);
+                    questions = Database.createQuestion(etAddGenre.getText().toString(), etAddQuestion.getText().toString(), choices, userAnswer, etFollowUpFact.getText().toString());
                 }
 
-                String newGenre = Genre.getText().toString();
+                String[] genres = getResources().getStringArray(R.array.spnGenres);
 
-                String[] genres = getResources().getStringArray(R.array.Genres);
-
-                for(int i = 0; i < genres.length; i++)
+                for (int i = 0; i < genres.length; i++)
                 {
                     System.out.println(genres[i]);
                 }
 
-                ArrayList<String> test = new ArrayList<String>();
-                for(int i = 0; i < quest.size(); i++)
+                for (int i = 0; i < questions.size(); i++)
                 {
-                    test.add(quest.get(i).getGenre());
+                    quiz.add(questions.get(i).getGenre());
                 }
 
-
-
-
-                //List<String> genres = new ArrayList<String>(); = Database.getGenres()
-                //ArrayAdapter<String> adapter;
-                //view.getContext().getApplicationContext()
-                //adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_single_choice, genres);
-                //genres.add(adapter);
-
-                Navigation.findNavController(v).navigate(R.id.action_addFragment_to_addedFragment);
+                Navigation.findNavController(view).navigate(R.id.action_addFragment_to_addedFragment);
             }
         });
 

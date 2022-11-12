@@ -24,7 +24,8 @@
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_addedFragment"
-            app:destination="@id/addedFragment" />
+            app:destination="@id/addedFragment"
+            app:popUpTo="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
@@ -33,7 +34,8 @@
         tools:layout="@layout/fragment_quiz" >
         <action
             android:id="@+id/action_quizFragment_to_scoreFragment"
-            app:destination="@id/scoreFragment" />
+            app:destination="@id/scoreFragment"
+            app:popUpTo="@id/welcomeFragment" />
         <argument android:name="choice"
             app:argType="string" />
     </fragment>

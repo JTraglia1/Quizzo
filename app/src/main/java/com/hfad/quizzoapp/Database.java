@@ -1,29 +1,28 @@
 package com.hfad.quizzoapp;
 
 import android.view.View;
-
 import java.util.ArrayList;
 
-public class Database extends Question {
-
+public class Database extends Question
+{
     private static ArrayList<Question> questions;
 
-    public static ArrayList<Question> setData(String Genre, String followUp, String Question, ArrayList<String> choices, String answer) {
-        if (questions == null) {
-
-            createData();
+    public static ArrayList<Question> createQuestion(String genre, String question, ArrayList<String> choices, String answer, String followUpFact)
+    {
+        if (questions == null)
+        {
+            addQuestion();
         }
         else
         {
-            questions.add(new Question(Genre, Question, choices, answer, followUp));
+            questions.add(new Question(genre, question, choices, answer, followUpFact));
         }
 
         return questions;
     }
 
-    private static void createData()
+    private static void addQuestion()
     {
-
         questions = new ArrayList<Question>();
 
         ArrayList<String> questionChoices = new ArrayList<String>();
@@ -185,9 +184,8 @@ public class Database extends Question {
         questionChoices.clear();
     }
 
-    public static ArrayList<Question>getQuestions()
+    public static ArrayList<Question> getQuestions()
     {
-        System.out.println("Returning Questions");
         return questions;
     }
 
@@ -195,9 +193,9 @@ public class Database extends Question {
     {
         ArrayList<String> specificGenre = new ArrayList<String>();
 
-        for(int i = 0; i < questions.size(); i++)
+        for (int i = 0; i < questions.size(); i++)
         {
-            if(questions.get(i).getGenre().equals(genre))
+            if (questions.get(i).getGenre().equals(genre))
             {
                 specificGenre.add(questions.get(i).getGenre());
             }

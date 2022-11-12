@@ -12,132 +12,121 @@
         android:id="@+id/tvGenreSelected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Genre"
+        android:text="@string/tvGenreSelected"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Number"
+        app:layout_constraintBottom_toTopOf="@+id/tvCurrentQuestionNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Number"
+        android:id="@+id/tvCurrentQuestionNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Question X out of X"
+        android:text="@string/tvCurrentQuestionNumber"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Question"
+        app:layout_constraintBottom_toTopOf="@+id/tvQuizQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGenreSelected" />
 
     <TextView
-        android:id="@+id/Question"
+        android:id="@+id/tvQuizQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quiz Question"
+        android:text="@string/tvQuizQuestion"
         android:textAlignment="center"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/rgChoices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Number" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentQuestionNumber" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgChoices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
+        app:layout_constraintBottom_toTopOf="@+id/btnNextQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Question">
+        app:layout_constraintTop_toBottomOf="@+id/tvQuizQuestion">
 
         <RadioButton
-            android:id="@+id/radia1"
+            android:id="@+id/rbFirstChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Answer"
+            android:text="@string/rbFirstChoice"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/radia2"
+            app:layout_constraintBottom_toTopOf="@+id/rbSecondChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Question" />
+            app:layout_constraintTop_toBottomOf="@+id/tvQuizQuestion" />
 
         <RadioButton
-            android:id="@+id/radia2"
+            android:id="@+id/rbSecondChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Second Answer"
+            android:text="@string/rbSecondChoice"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/radia3"
+            app:layout_constraintBottom_toTopOf="@+id/rbThirdChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radia1" />
+            app:layout_constraintTop_toBottomOf="@+id/rbFirstChoice" />
 
         <RadioButton
-            android:id="@+id/radia3"
+            android:id="@+id/rbThirdChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Third Answer"
+            android:text="@string/rbThirdChoice"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/radia4"
+            app:layout_constraintBottom_toTopOf="@+id/rbFourthChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radia2" />
+            app:layout_constraintTop_toBottomOf="@+id/rbSecondChoice" />
 
         <RadioButton
-            android:id="@+id/radia4"
+            android:id="@+id/rbFourthChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fourth Answer"
+            android:text="@string/rbFourthChoice"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/radia5"
+            app:layout_constraintBottom_toTopOf="@+id/rbFifthChoice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radia3" />
+            app:layout_constraintTop_toBottomOf="@+id/rbThirdChoice" />
 
         <RadioButton
-            android:id="@+id/radia5"
+            android:id="@+id/rbFifthChoice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fifth Answer"
+            android:text="@string/rbFifthChoice"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
+            app:layout_constraintBottom_toTopOf="@+id/btnNextQuestion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radia4" />
+            app:layout_constraintTop_toBottomOf="@+id/rbFourthChoice" />
 
-        <RadioButton
-            android:id="@+id/radia6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fifth Answer"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radia4" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/btnNextQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next Question"
+        android:text="@string/btnNextQuestion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/rgChoices" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
