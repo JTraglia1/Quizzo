@@ -25,14 +25,18 @@ import java.util.ArrayList;
  */
 public class QuizFragment extends Fragment
 {
-    int questionNum = 0;
-    int count = 0;
+    private int questionNum = 0;
+    private int count = 0;
+
     Boolean isPressed = true;
     String selectedAnswer = "";
 
     ArrayList<String> answers = new ArrayList<String>();
     ArrayList<Question> questions = getQuestions();
     ArrayList<Question> genreQuestions = new ArrayList<Question>();
+
+    //Keys for use with the bundle
+    public static final String QUESTION_NUMBER = "0";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -53,6 +57,14 @@ public class QuizFragment extends Fragment
 
         String genre = QuizFragmentArgs.fromBundle(requireArguments()).getChoice();
 
+        //If savedInstanceState is not null, restore the previous state of the program.
+        if (savedInstanceState != null)
+        {
+            //Restore the properties within the bundle.
+            questionNum = savedInstanceState.getInt(QUESTION_NUMBER);
+            tvCurrentQuestionNumber.setText("" + questionNum);
+        }
+
         for (int i = 0; i < questions.size();i++)
         {
             if (questions.get(i).getGenre().equals(genre))
@@ -67,9 +79,11 @@ public class QuizFragment extends Fragment
         retrieveQuestionsWithGenre(rbFirstChoice, rbSecondChoice, rbThirdChoice, rbFourthChoice, rbFifthChoice, genreQuestions, genre,
                                    tvGenreSelected, tvCurrentQuestionNumber, tvQuizQuestion);
 
-        btnNextQuestion.setOnClickListener(new View.OnClickListener() {
+        btnNextQuestion.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
 
                 if (rbFirstChoice.isChecked())
                 {
@@ -108,8 +122,7 @@ public class QuizFragment extends Fragment
                 questionNum += 1;
                 isPressed = true;
 
-                System.out.println(questionNum + "" + count);
-                if(questionNum == count || questionNum == 0)
+                if (questionNum == count || questionNum == 0)
                 {
                     QuizFragmentDirections.ActionQuizFragmentToScoreFragment action =
                             QuizFragmentDirections.actionQuizFragmentToScoreFragment(answers.toArray(new String[answers.size()]));
@@ -131,7 +144,6 @@ public class QuizFragment extends Fragment
                                            RadioButton rbFifthChoice, ArrayList<Question> genreQuestions, String genre,
                                            TextView tvGenreSelected, TextView tvCurrentQuestionNumber, TextView tvQuizQuestion)
     {
-        System.out.println(genreQuestions.get(questionNum).getGenre() + "-" + genre);
         tvCurrentQuestionNumber.setText("Question #" + (questionNum + 1));
         tvQuizQuestion.setText(genreQuestions.get(questionNum).getQuestion());
         tvGenreSelected.setText(genre);
@@ -207,5 +219,20 @@ public class QuizFragment extends Fragment
                 }
             }
         }
+    }
+
+    /**
+     * Method utilized to save the current state of the application's essential data.
+     * The implementation of this method ensures no data loss when the application
+     * loses the current focus of the device.
+     * @param savedInstanceState default parameter used to save the application's data.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState)
+    {
+        super.onSaveInstanceState(savedInstanceState);
+
+        //Save the current state of the activities' special properties
+        savedInstanceState.putInt(QUESTION_NUMBER, questionNum);
     }
 }
