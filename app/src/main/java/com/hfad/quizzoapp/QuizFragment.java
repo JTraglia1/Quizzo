@@ -1,6 +1,5 @@
 package com.hfad.quizzoapp;
 
-import static com.hfad.quizzoapp.Database.getQuestions;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -30,7 +29,7 @@ public class QuizFragment extends Fragment
     String selectedAnswer = "";
 
     ArrayList<String> answers = new ArrayList<String>();
-    ArrayList<Question> questions = getQuestions();
+    ArrayList<Question> questions = Database.getDatabase().getQuestions();
     ArrayList<Question> genreQuestions = new ArrayList<Question>();
 
     //Keys for use with the bundle

@@ -27,6 +27,7 @@ public class AddFragment extends Fragment
 
     String userAnswer = "";
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -85,7 +86,7 @@ public class AddFragment extends Fragment
                         userAnswer = etAddFourthChoice.getText().toString();
                     }
 
-                    questions = Database.createQuestion(etAddGenre.getText().toString(), etAddQuestion.getText().toString(), choices, userAnswer, etFollowUpFact.getText().toString());
+                    questions = Database.getDatabase().createQuestion(etAddGenre.getText().toString(), etAddQuestion.getText().toString(), choices, userAnswer, etFollowUpFact.getText().toString());
                 }
 
                 String[] genres = getResources().getStringArray(R.array.spnGenres);

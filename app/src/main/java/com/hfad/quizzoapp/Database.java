@@ -12,9 +12,27 @@ import java.util.ArrayList;
  */
 public class Database extends Question
 {
-    private static ArrayList<Question> questions;
+    private static Database oneAndOnlyDatabase;
 
-    public static ArrayList<Question> createQuestion(String genre, String question, ArrayList<String> choices, String answer, String followUpFact)
+    private ArrayList<Question> questions;
+
+    public static Database getDatabase()
+    {
+        if (oneAndOnlyDatabase == null)
+        {
+            oneAndOnlyDatabase = new Database();
+        }
+
+        return oneAndOnlyDatabase;
+    }
+
+    private Database()
+    {
+        questions = new ArrayList<Question>();
+        addQuestion();
+    }
+
+    public ArrayList<Question> createQuestion(String genre, String question, ArrayList<String> choices, String answer, String followUpFact)
     {
         if (questions == null)
         {
@@ -28,7 +46,7 @@ public class Database extends Question
         return questions;
     }
 
-    private static void addQuestion()
+    private void addQuestion()
     {
         questions = new ArrayList<Question>();
 
@@ -191,12 +209,12 @@ public class Database extends Question
         questionChoices.clear();
     }
 
-    public static ArrayList<Question> getQuestions()
+    public ArrayList<Question> getQuestions()
     {
         return questions;
     }
 
-    public static ArrayList<String> getGenre(String genre)
+    public ArrayList<String> getGenre(String genre)
     {
         ArrayList<String> specificGenre = new ArrayList<String>();
 
